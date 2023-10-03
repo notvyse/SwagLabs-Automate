@@ -2,17 +2,13 @@ package Automate;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-// fix
-
-public class LeftNavElementsAbout {
+public class LinkedIn {
 	public static String browser = "Chrome";
 	public static WebDriver driver;
-	WebElement elem = driver.switchTo().activeElement(); 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		if(browser.equals("Chrome")) {
@@ -24,9 +20,8 @@ public class LeftNavElementsAbout {
 		driver.findElement(By.xpath("//*[@id=\"user-name\"]")).sendKeys("problem_user");
 		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("secret_sauce");
 		driver.findElement(By.xpath("//*[@id=\"login-button\"]")).click();
-		driver.findElement(By.xpath("//*[@id=\"react-burger-menu-btn\"]")).click();
-		driver.findElement(By.xpath("//a[text()='About']")).click();		
-		
+		driver.findElement(By.xpath("//a[normalize-space()='LinkedIn']")).click();
+		driver.quit();
 	}
 
 }
